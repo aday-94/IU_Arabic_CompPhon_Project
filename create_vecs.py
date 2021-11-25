@@ -18,6 +18,7 @@ import pprint
 
 # change paths if necessary
 CSV_PATH = './english_ipa.csv'
+OUTPUT_PATH = './norm_vecs.txt'
 
 
 def normalize_vec(li): 
@@ -73,5 +74,7 @@ for vec in feature_vecs:
 # print(numerical_vecs)
 
 ### : Normalize vector
-norm_vec = [normalize_vec(v) for v in numerical_vecs]
-print(norm_vec)
+norm_vecs = [normalize_vec(v) for v in numerical_vecs]
+sys.stdout = open(OUTPUT_PATH, 'w')
+print(norm_vecs)
+sys.stdout.close()
