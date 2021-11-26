@@ -1,9 +1,9 @@
 ### L542-Final-Project
-# Indiana University, Bloomington 
+Indiana University, Bloomington 
 
-# Fall 2021 L542
+Fall 2021 L542
 
-# Lily Kawaoto, Andrew Davis
+Lily Kawaoto, Andrew Davis
 
 ```
 
