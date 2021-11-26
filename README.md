@@ -12,7 +12,7 @@ Lily Kawaoto, Andrew Davis
 - Creates a normalized feature vector of IPA symbols and puts it in norm_vecs.json
 - Import sys, pandas, numpy, json
 
-
+```
 
 ## STEP 2. create_graph_matrix.py:
 - Creates a matrix of node-to-node relationship statements using normalized feature values from Step 1.
