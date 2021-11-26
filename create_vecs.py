@@ -11,14 +11,14 @@ Lily Kawaoto <lkawaoto@iu.edu>
 
 import os, sys, re
 from numpy.core.numeric import full
-# from nltk.corpus.reader import tagged
 import pandas as pd
+import json
 import pprint
 
-
 # change paths if necessary
-CSV_PATH = './english_ipa.csv'
-OUTPUT_PATH = './norm_vecs.txt'
+IPA_CSV_PATH = './english_ipa.csv'
+NORM_VEC_PATH = './norm_vecs.json'
+IPA_SYMBOLS_PATH = './ipa_symbols.json'
 
 
 def normalize_vec(li): 
@@ -30,7 +30,7 @@ def normalize_vec(li):
 
 
 ### : Read in english_ipa.csv 
-df = pd.read_csv(CSV_PATH, engine='python')
+df = pd.read_csv(IPA_CSV_PATH, engine='python')
 df_len = len(df.index) # 37 IPA symbols
 df_cols = list(df.columns) # len = 24: 1 IPA + 23 features
 
@@ -49,6 +49,10 @@ for i in range(df_len):
     # print(feature_vec)
     feature_vecs.append(feature_vec) 
     ipa_list.append(ipa)
+sys.stdout = open(IPA_SYMBOLS_PATH, 'w')
+jsonString = json.dumps(ipa_list) # json.dumps() has an ensure-ASCII param
+print(jsonString)
+sys.stdout.close()
 
 
 ### : Create modified vector using 3 numerical features 
@@ -73,8 +77,8 @@ for vec in feature_vecs:
     numerical_vecs.append(temp)
 # print(numerical_vecs)
 
-### : Normalize vector
+### : Normalize vector. Save to new file in list format.
 norm_vecs = [normalize_vec(v) for v in numerical_vecs]
-sys.stdout = open(OUTPUT_PATH, 'w')
+sys.stdout = open(NORM_VEC_PATH, 'w')
 print(norm_vecs)
 sys.stdout.close()
