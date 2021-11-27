@@ -64,9 +64,9 @@ numerical_vecs = []
 for vec in feature_vecs:
     temp = []
     for i in range(num_features):
-        if vec[i]=='-':
+        if vec[i] == '-':
             vec[i] = -1
-        elif vec[i]=='+':
+        elif vec[i] == '+':
             if df_cols[i+1].isupper():
                 vec[i] = 2
             else:
@@ -76,6 +76,7 @@ for vec in feature_vecs:
         temp.append(vec[i])
     numerical_vecs.append(temp)
 # print(numerical_vecs)
+
 
 ### : Normalize vector. Save to new file in list format.
 norm_vecs = [normalize_vec(v) for v in numerical_vecs]
