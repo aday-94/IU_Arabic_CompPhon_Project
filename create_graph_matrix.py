@@ -49,5 +49,6 @@ for i in range(df_len):
         triplets.append((ipas[i], features[j], norm_vecs[i][j]))
 
 sys.stdout = open(TRIPLETS_PATH, 'w')
-print(triplets)
+jsonString = json.dumps(triplets) # json.dumps() has an ensure-ASCII param
+print(jsonString)
 sys.stdout.close()
