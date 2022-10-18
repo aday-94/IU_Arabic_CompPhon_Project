@@ -3,10 +3,9 @@ References:
 David R. Mortensen, Siddharth Dalmia, and Patrick Littell. 2018. Epitran: Precision G2P for many languages. In Proceedings of the Eleventh International Conference on Language Resources and Evaluation (LREC 2018), Paris, France. European Language Resources Association (ELRA).
 """
 
-CV_FILE_DIR = '/Users/lilykawaoto/Documents/GitHub/CompPhon/CV_transcripts/train.tsv'
-CV_CLEANED_TRANSCRIPTS_PATH = '/Users/lilykawaoto/Documents/GitHub/CompPhon/CV_transcripts/all_CV_transcripts.txt'
-CV_TRANSCRIPT_IPA_PATH = '/Users/lilykawaoto/Documents/GitHub/CompPhon/CV_transcripts/CV_transcript_ipa.txt'
-CV_IPAS_IN_TRANSCRIPTS = '/Users/lilykawaoto/Documents/GitHub/CompPhon/CV_transcripts/all_CV_transcripts_ipa.json'
+CV_TSV_PATH = '/Users/lilykawaoto/Documents/GitHub/CompPhon/CV_transcripts/train.tsv'
+CV_TXT_PATH = '/Users/lilykawaoto/Documents/GitHub/CompPhon/CV_transcripts/CV_transcripts.txt'
+CV_IPA_PATH = '/Users/lilykawaoto/Documents/GitHub/CompPhon/CV_transcripts/CV_transcript_ipa.txt'
 
 from dataclasses import replace
 import os, sys, re
@@ -16,17 +15,18 @@ import json
 from ipatok import tokenise
 import epitran
 
+"""
+# def preprocess(utt):
+#     remove_punctuation = "!\"#$%&'()*+, -./;<=>?@[\]^_`{|}~ˈ‘’"
+#     utt = re.sub(r'@s:eng', '', utt) # code switching or English loanwords?
+#     utt = re.sub(r'ˤˤ', r'ˤ',utt) # otherwise, tokenizer thinks a symbol has 2 diacritics (e.g. [ʔˤˤ])
+#     utt = re.sub(r'ːː', r'ː',utt)
+#     utt = re.sub(r'xxx','',utt)
+#     translator = utt.maketrans('', '', remove_punctuation)
+#     return utt.translate(translator).lower()
+"""
 
-"Q to Andrew: anything to clean up in CV_transcript_ipa.txt?M"
-def preprocess(utt):
-    remove_punctuation = "!\"#$%&'()*+, -./;<=>?@[\]^_`{|}~ˈ‘’"
-    utt = re.sub(r'@s:eng', '', utt) # code switching or English loanwords?
-    utt = re.sub(r'ˤˤ', r'ˤ',utt) # otherwise, tokenizer thinks a symbol has 2 diacritics (e.g. [ʔˤˤ])
-    utt = re.sub(r'ːː', r'ː',utt)
-    utt = re.sub(r'xxx','',utt)
-    translator = utt.maketrans('', '', remove_punctuation)
-    return utt.translate(translator).lower()
-
+"""
 # def tokenize(utt):
 #     tok = []
 #     length = len(utt)
@@ -38,22 +38,23 @@ def preprocess(utt):
 #         else:
 #             tok.append(utt[cnt])
 #             cnt += 1
-#     return tokenize    
+#     return tokenize 
+"""   
 
 
 """
 Step 1: put all transcripts in a text file 
 """
 sentences_ar = []
-with open(CV_FILE_DIR, 'r') as f:
+with open(CV_TSV_PATH, 'r') as f:
     next(f) # skip header
     reader = csv.reader(f, delimiter="\t")
     for row in reader:
         sentences_ar.append(row[2])
 
 ### Uncomment to re-create file
-# with open(CV_CLEANED_TRANSCRIPTS_PATH, 'w') as f:
-#     f.write((" ".join(sentences_ar)))
+with open(CV_TXT_PATH, 'w') as f:
+    f.write(("\n".join(sentences_ar)))
 
 
 """
@@ -61,13 +62,16 @@ Step 2: convert orthographic transcriptions to IPA
 """
 epi = epitran.Epitran('ara-Arab')
 sentences_ipa = []
-with open(CV_CLEANED_TRANSCRIPTS_PATH, 'r') as f:
-    trans = f.readline()
-    ipa_transcription = epi.transliterate(trans)
-    sentences_ipa.append(ipa_transcription)
+with open(CV_TXT_PATH, 'r') as f:
+    while f:
+        line = f.readline()
+        if line == "":
+            break
+        ipa_transcription = epi.transliterate(line)
+        sentences_ipa.append(ipa_transcription)
 
-with open(CV_TRANSCRIPT_IPA_PATH, 'w') as f:
-    f.write((" ".join(sentences_ipa)))
+with open(CV_IPA_PATH, 'w') as f:
+    f.write(("".join(sentences_ipa)))
 
 
 # phonemes = [tokenise(u, replace=True, diphthongs=True) for u in utterances] 
