@@ -18,8 +18,8 @@ with open(args.input_file, 'r') as in_f, open(args.output_file, 'w') as out_f:
     #         break
     #     out_f.write(epi.transliterate(line))
 
-    # ### If one chunk of text
-    # txt = in_f.read().split()
-    # for w in txt:
-    #     translated_w = epi.transliterate(w)
-    #     out_f.write(translated_w + " ")
+    ### If one chunk of text
+    txt = in_f.read().split()
+    for w in txt:
+        translated_w = epi.transliterate(w)
+        out_f.write(translated_w + " ")
