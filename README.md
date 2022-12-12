@@ -2,8 +2,8 @@
 
 ## Lily Kawaoto (lkawaoto@iu.edu) & Andrew S. Davis (ad7@iu.edu)
 
-## Advanced Natural Language Processing, LING-L645 Final Project, Fall 2022
-## Indiana University, Bloomington
+## LING-L645, Advanced Natural Language Processing, Final Project, Fall 2022
+## Indiana University - Bloomington
 
 
 ## I. Project Description:
