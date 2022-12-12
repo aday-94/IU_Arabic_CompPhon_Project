@@ -1,10 +1,13 @@
 # Arabic Emphatic Harmony: a comparison of phonological feature embeddings to neural network embeddings  
 
 Lily Kawaoto (lkawaoto@iu.edu)
+
 Andrew Davis (ad7@iu.edu)
+
 Indiana University, Bloomington
 
-I. Project Description:
+
+## I. Project Description:
 
     1. What your application does,
     
@@ -15,13 +18,14 @@ The purpose of our research is: 1) to take any Orthographic, Arabic text ; 2) Us
     2. Why you used the technologies you used,
     3. Some of the challenges you faced and features you hope to implement in the future
 
-II. Table of Contents: 
+
+## II. Table of Contents: 
 
 
 
-III. How to Install and Run the Project:
+## III. How to Install and Run the Project:
 
-IV. How to Use the Project:
+## IV. How to Use the Project:
 
-V. Credits:
+## V. Credits:
 
