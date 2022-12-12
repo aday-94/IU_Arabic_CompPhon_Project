@@ -1,10 +1,9 @@
 # Arabic Emphatic Harmony: a comparison of phonological feature embeddings to neural network embeddings  
 
-Lily Kawaoto (lkawaoto@iu.edu)
+## Lily Kawaoto (lkawaoto@iu.edu) & Andrew S. Davis (ad7@iu.edu)
 
-Andrew Davis (ad7@iu.edu)
-
-Indiana University, Bloomington
+## Advanced Natural Language Processing, LING-L645 Final Project, Fall 2022
+## Indiana University, Bloomington
 
 
 ## I. Project Description:
