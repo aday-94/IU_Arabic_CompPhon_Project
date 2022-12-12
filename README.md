@@ -20,7 +20,29 @@ The purpose of our research is: 1) to take any Orthographic, Arabic text ; 2) Us
 
 
 ## II. Table of Contents: 
+Creating Dataset & Preprocessing Text 
 
+Colab Notebook 
+
+    Step 1. Import libraries 
+
+    Step 2. Create phonological feature (PF) embeddings for each IPA character 
+
+    Step 3. Read in pre-silver standard (preSS) and silver standard (SS) transcription texts 
+
+            Get all possible 2-character combinations in the preSS and SS 
+
+    Debrief 1
+
+    Step 4. Learn neural network (NN) feature embeddings for each IPA character 
+
+    Step 5. Visualize cosine similarity histograms of PF and NN embeddings 
+
+    Step 6. Qualitatively compare the cosine similarity scores of each 2-character pair 
+
+    Debrief 2
+
+    Step 7. Get OCP cluster hierarchical graphs 
 
 
 ## III. How to Install and Run the Project:
