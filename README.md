@@ -84,4 +84,10 @@ The purpose of our research is: 1) to take any Orthographic, Arabic text ; 2) Us
 
 
 ## V. Credits:
+OCP phoneme clustering algorithm modified from https://github.com/cvocp/cvocp (Hulden 2017). 
 
+Character LSTM code referenced from https://github.com/viritaromero/Character-Level-LSTM-in-Pytorch. 
+
+
+## VI. License:
+MIT License. See LICENSE.txt.
