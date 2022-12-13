@@ -18,36 +18,6 @@ Emphatic harmony occurs in Modern-Standard Arabic when an emphatic consonant (ص
 
 Immediate next steps for our research include two directions: a) Incorporate Arabic dialects into our phonological feature model and pre-processing techniques to create dialect specific models and datasets, and, b) Apply more Arabic phonological processes to our data, so, that the Silver Standard becomes an even closer representation of how the original, Arabic text would be spoken.
 
- 
-    ***Rough Outline***
-    
-The purpose of our research is: 1) to take any Orthographic, Arabic text ; 2) Use our patented pre-processing method to convert the entire Orthographic text to its IPA representation + applied a phonological rule (gemination) in the pre-processing based on the orthographic shaddah character in Arabic, so, that we could produce the correct IPA representation of the Orthographic words -- this is our pre-Silver Standard ; 3) Then we created our Silver Standard from the last step's output via applying emphasis spreading (emphatic vowel harmony & emphatic liquid harmony) which means that if an emphatic phoneme (list them here) occurred within a word, any vowels in that word became uvularized and any liquids (l r) in that word became emphatic ; 4) From here we used our proprietary Arabic Phonological Feature Model based on our own Feature Geometrical Structure to create feature embeddings and test their accuracy for predicting when and where emphasis should spread to vowels and liquids ; 5) We then extracted the character bigrams of the pre-SS and the SS standard and when analyzing the character bigrams of these two datasets, our hypothesis was validated, as the major difference was the addition of character bigrams associated with emphatic harmony ; 6) We then analyzed those character bigrams with respect to our hypotheses ; 7) We then trained a NN (LSTM) on SS-Train and then learned its feature embeddings of the ipa symbols ; 8) We used our PF model and NN model on Pre-SS & SS to learn when and where emphasis harmony should occur ; 9) Then, we compared:
-
-1) the similarity scores between each character bigram for each the PF & NN models  
-
-2) we see which 2-char combos had in increase in counts from preSS to SS 
-
-3) we take that subset of combos and compare the sim score btwn PF embeds & NN embeds 
-
-Overall, this program allows us to create a dataset from Arabic orthographic text, convert it to IPA, and use this dataset to train machine learning models for the purpose analyzing the phonotactics of Arabic; specifically with regards to phonological processes such as emphatic harmony.  
-    
-    2. Why you used the technologies you used,
-
-***ROUGH OUTLINE***
-
-We got our data from xxx database (Common Voice?) for Arabic data then ; 2) we originally were using Epitran’s Arabic Text preprocessing to convert the Arabic, orthographic text to its correct IPA representations, however, there were numerous issues with Epitran’s program: a) it took a long time (several hours) to process ; b) it had many, many leftover characters ; c) upon manual examination it was converting some orthographic characters to the incorrect IPA symbol ; d) it was splitting what is one word in orthography into two separate words in the IPA representation (have no idea how/why it did this as words are separated by white space in the original Arabic orthographic text) ; 3) After this multitude of issues, we decided to create our own program to do all of the preprocessing to create the Silver Standard according to the following steps:  
-    
-    3. Some of the challenges you faced and features you hope to implement in the future
-
-***ROUGH DRAFT***
-
- Preprocessing: 
-
-    Challenges were that Epitran didn’t work well at all; errors mentioned above 
-
-    There are very unique challenges to preprocessing arabic text: multiple unicodes associated with one character, multiple styles of character that look the same, but have different unicodes, abjad meaning that vowels are written as diacritics and many issues with diacritics and preprocessing (numerous diacritics) and they are essential to create an accurate IPA representation of the arabic orthographic text. There were numerous odd characters such as ligatures and other symbols that had to be identified to process out. At the end there was a period of time where we had to go through a list of maybe two dozen left over variations of punctuations as well and preprocess them out. In terms of phonological processes, we ran into issues applying gemination (based on the shaddah character) to the IPA text, so, we applied the process of gemination to the orthographic text and then were able to convert it to IPA successfully.  
-
-
 ## II. Table of Contents: 
 Creating Dataset & Preprocessing Text
 
