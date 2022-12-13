@@ -37,27 +37,21 @@ Creating Dataset & Preprocessing Text
 
 4. Now, we need to apply the phonological process of gemination to the text **_before_** we convert it to the IPA. In Arabic, there is a diacritic called the "shaddah". When the shaddah diacritic is applied to a consonant, this signifies gemination which means this consonant is to be repeated. For example, /ظ/ is an Arabic consonant represented by the following IPA character /ðˤ/. However, if the Arabic consonant has a shaddah over it, like this /ظّ/, then the correct IPA representation is /ðˤðˤ/ after gemination is applied. -- Run [Shaddah - Arabic Gemination](https://github.com/lilykaw/IU_CompPhon_project/blob/main/L645-Arabic-PreProcessing/L645-ArabicShaddah.py)
 
-5. 
+5. With gemination applied, we convert the majority of the Arabic, orthographic characters to their IPA equivalents -- Run [Arabic Consonants IPA](https://github.com/lilykaw/IU_CompPhon_project/blob/main/L645-Arabic-PreProcessing/L645-ArabicConsonantsRegex.py)
 
-    Step 1 We removed all English characters from the data,  
+6. The majority of short vowels are represented by the remaining diacritics, now we process those into their IPA counterparts -- Run [Arabic Diacritics IPA](https://github.com/lilykaw/IU_CompPhon_project/blob/main/L645-Arabic-PreProcessing/L645-ArabicDiacriticsRegex.py)
 
-    Step 2 We removed all “odd” characters – these were Arabic ligatures, random symbols such as the Soviet symbol, etc 
+7. Finally, we remove all punctuation marks and remaining symbols -- Run [Remove Arabic Punctuation](https://github.com/lilykaw/IU_CompPhon_project/blob/main/L645-Arabic-PreProcessing/L645-ArabicRemovePunct.py)
 
-    Step 3 While the text was still in Arabic Orthography, we applied the phonological rule of gemination to process the text further. Gemination is when a phoneme is doubled/repeated. In Arabic, whenever there’s a shaddah diacritic (insert here) that means the Arabic, orthographic, consonant that it presides over undergoes the process of gemination (the character is doubled/repeated) 
+The output of the last step is our [pre-SS dataset](https://github.com/lilykaw/IU_CompPhon_project/blob/main/L645-Arabic-PreProcessing/f2k22data-step6-arbipa-removedpunct-phone1-gem.txt)
 
-    Step 4 We converted the majority of characters to their IPA equivalents (mainly consonants and long vowels) 
+From here, we apply two more steps of pre-processing to create our SS dataset. They are:
 
-    Step 5 Then we converted the left over diacritics to their IPA equivalents 
+1. Apply Emphatic Vowel Harmony to the dataset, so, that any vowel in a word containing an emphatic is realized as its uvularized form -- Run [Emphatic Vowel Harmony](https://github.com/lilykaw/IU_CompPhon_project/blob/main/L645-Arabic-PreProcessing/L645-EmphasisRTRVowelHarmony.py)
 
-    Step 6 Then we removed various forms of punctuation and other special characters 
+2. Apply Emphatic Liquid Harmony to the dataset, so, that any liquid (/l/ or /r/) in a word containing an emphatic is realized as its pharyngealized form -- Run [Emphatic Liquid Harmony](https://github.com/lilykaw/IU_CompPhon_project/blob/main/L645-Arabic-PreProcessing/L645-EmphasisRTRConsonantHarmony.py)
 
-    This is Pre-SS  
-
-    Step 7 Then we applied the phonological process of Emphatic Vowel Harmony 
-
-    Step 8 Then we applied the phonological process of Emphatic Liquid Harmony 
-
-    This is SS 
+The output of this last step is our [SS dataset!](https://github.com/lilykaw/IU_CompPhon_project/blob/main/L645-Arabic-PreProcessing/f2k22data-step8-arbipa-phon2-emphasis-SS.txt)
 
 Colab Notebook 
 
