@@ -8,7 +8,7 @@
 
 ### I. Project Description:
 
-Our application is to be able to take **_any_** Arabic text, transcribe the text (characters _**and**_ diacritics) to its matching IPA representation in an effective and efficient mannger, and use this newly, created dataset to study the phonotactics of Arabic with the aid of machine learning. More specifically, our application allows us to apply specific phonological processes that occur in Arabic producing our Silver Standard which is an IPA representation of how the original, written Arabic text _would_ be spoken with respect to the emphatic harmony process demonstrated in our experiment.
+The purpose of our application is to be able to take **_any_** Arabic text, transcribe the text (characters _**and**_ diacritics) to its matching IPA representation in an effective and efficient mannger, and use this newly, created dataset to study the phonotactics of Arabic with the aid of machine learning. More specifically, our application allows us to apply specific phonological processes that occur in Arabic producing our Silver Standard which is an IPA representation of how the original, written Arabic text _would_ be spoken with respect to the emphatic harmony process demonstrated in our experiment.
 
 Emphatic harmony occurs in Modern-Standard Arabic when an emphatic consonant (ص, ض, ط, ظ) is present in a word. The presence of an emphatic causes emphasis spreading to surrounding the vowels and liquids (/l/, /r/) within the word boundary. In our phonological model, this process is characterized by the feature [+RTR]. The IPA realization of emphasis spreading demonstrated in our Silver Standard is that the vowels become uvularized (i.e. /a/ -> [aʶ]) and the liquids become pharyngealized (i.e. /r/ -> [rˤ]).
 
