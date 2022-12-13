@@ -53,6 +53,11 @@ From here, we apply two more steps of pre-processing to create our SS dataset. T
 
 The output of this last step is our [SS dataset!](https://github.com/lilykaw/IU_CompPhon_project/blob/main/L645-Arabic-PreProcessing/f2k22data-step8-arbipa-phon2-emphasis-SS.txt)
 
+See the images below of the pre-SS text as well as the SS text and notice the circled word. This word contains an emphatic consonant /sˤ/, the vowel /aː/, and the liquid /l/. Notice that in the SS text, after emphasis harmony for both vowels and liquids has been applied, the change in the IPA characters: /aː/ -> /aʶː/ and /l/ -> /lˤ/.
+
+<p align="center"><img width="800" height="400" src="https://github.com/lilykaw/IU_CompPhon_project/blob/main/README_images/L645-PreSS.png"><align="center"><img width="800" height="400" src="https://github.com/lilykaw/IU_CompPhon_project/blob/main/README_images/L645-SS.png"></p>
+
+
 Colab Notebook 
 
     Step 1. Import libraries 
