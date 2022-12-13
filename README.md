@@ -52,25 +52,25 @@ Creating Dataset & Preprocessing Text
 
 Colab Notebook 
 
-    Step 1. Import libraries 
+1. Import libraries 
 
-    Step 2. Create phonological feature (PF) embeddings for each IPA character 
+2. Create phonological feature (PF) embeddings for each IPA character 
 
-    Step 3. Read in pre-silver standard (preSS) and silver standard (SS) transcription texts 
+3. Read in pre-silver standard (preSS) and silver standard (SS) transcription texts 
 
-            Get counts of all possible 2-character combinations in the preSS and SS 
+   Get counts of all possible 2-character combinations in the preSS and SS 
 
-    Debrief 1
+Debrief 1
 
-    Step 4. Learn and extract neural network (NN) feature embeddings for each IPA character 
+4. Learn and extract neural network (NN) feature embeddings for each IPA character 
 
-    Step 5. Visualize cosine similarity histograms of all IPA characters using PF and NN embeddings 
+5. Visualize cosine similarity histograms of all IPA characters using PF and NN embeddings 
 
-    Step 6. Qualitatively compare the cosine similarity scores of each 2-character pair that showed an increase in counts from the preSS to SS texts
+6. Qualitatively compare the cosine similarity scores of each 2-character pair that showed an increase in counts from the preSS to SS texts
 
-    Debrief 2
+Debrief 2
 
-    Step 7. Get OCP cluster hierarchical graphs 
+7. Get OCP cluster hierarchical graphs 
 
 
 ## III. How to Install and Run the Project:
