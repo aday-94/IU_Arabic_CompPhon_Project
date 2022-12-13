@@ -6,12 +6,17 @@
 ## Indiana University - Bloomington
 
 
-## I. Project Description:
+### I. Project Description:
 
     1. What your application does,
-    
-    ***Rough Outline***
 
+The purpose of our application is to be able to take **_any_** Arabic text, transcribe the text (characters _**and**_ diacritics) to its matching IPA representation, and use the dataset to study the phonotactics of Arabic with the aid of machine learning techniques. More specifically, our application allows us to apply the specific phonological processes that occur producing a _Silver Standard_ which is an IPA representation of how the original, written Arabic text _would_ be spoken.
+
+The purpose of our application is to be able to take _**any**_ Arabic text and, instantaneously, process the _**entire**_ text into its relevant IPA representation. Then, our application can apply specific phonological processes to the data, such as the emphatic harmony process we demonstrate, in order to create a Silver-Standard dataset to train machine learning models on.
+ 
+ S
+    ***Rough Outline***
+    
 The purpose of our research is: 1) to take any Orthographic, Arabic text ; 2) Use our patented pre-processing method to convert the entire Orthographic text to its IPA representation + applied a phonological rule (gemination) in the pre-processing based on the orthographic shaddah character in Arabic, so, that we could produce the correct IPA representation of the Orthographic words -- this is our pre-Silver Standard ; 3) Then we created our Silver Standard from the last step's output via applying emphasis spreading (emphatic vowel harmony & emphatic liquid harmony) which means that if an emphatic phoneme (list them here) occurred within a word, any vowels in that word became uvularized and any liquids (l r) in that word became emphatic ; 4) From here we used our proprietary Arabic Phonological Feature Model based on our own Feature Geometrical Structure to create feature embeddings and test their accuracy for predicting when and where emphasis should spread to vowels and liquids ; 5) We then extracted the character bigrams of the pre-SS and the SS standard and when analyzing the character bigrams of these two datasets, our hypothesis was validated, as the major difference was the addition of character bigrams associated with emphatic harmony ; 6) We then analyzed those character bigrams with respect to our hypotheses ; 7) We then trained a NN (LSTM) on SS-Train and then learned its feature embeddings of the ipa symbols ; 8) We used our PF model and NN model on Pre-SS & SS to learn when and where emphasis harmony should occur ; 9) Then, we compared:
 
 1) the similarity scores between each character bigram for each the PF & NN models  
