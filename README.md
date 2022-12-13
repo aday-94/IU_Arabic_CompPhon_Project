@@ -35,7 +35,10 @@ Creating Dataset & Preprocessing Text
 
 3. Next, remove odd characters such as ligatures, random symbols, etc -- Run [Remove Odds](https://github.com/lilykaw/IU_CompPhon_project/blob/main/L645-Arabic-PreProcessing/L645-ArbOrtho-RemoveOddChars.py)
 
-4. 
+4. Now, we need to apply the phonological process of gemination to the text **_before_** we convert it to the IPA. In Arabic, there is a diacritic called the "shaddah". When the shaddah diacritic is applied to a consonant, this signifies gemination which means this consonant is to be repeated. For example, /ظ/ is an Arabic consonant represented by the following IPA character /ðˤ/. However, if the Arabic consonant has a shaddah over it, like this /ظّ/, then the correct IPA representation is /ðˤðˤ/ after gemination is applied. -- Run [Shaddah - Arabic Gemination](https://github.com/lilykaw/IU_CompPhon_project/blob/main/L645-Arabic-PreProcessing/L645-ArabicShaddah.py)
+
+5. 
+
     Step 1 We removed all English characters from the data,  
 
     Step 2 We removed all “odd” characters – these were Arabic ligatures, random symbols such as the Soviet symbol, etc 
