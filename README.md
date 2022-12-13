@@ -8,8 +8,6 @@
 
 ### I. Project Description:
 
-    1. What your application does, -- DONE
-
 Our application is to be able to take **_any_** Arabic text, transcribe the text (characters _**and**_ diacritics) to its matching IPA representation in an effective and efficient mannger, and use this newly, created dataset to study the phonotactics of Arabic with the aid of machine learning. More specifically, our application allows us to apply specific phonological processes that occur in Arabic producing a _Silver Standard_ which is an IPA representation of how the original, written Arabic text _would_ be spoken with respect to the emphatic harmony process demonstrated in our experiment.
 
 The building of this application consisted of several sections. First, utilizing phonological features and feature geometry, we created a hierarchal structure modeling phonological features with relation to IPA characters for the Arabic language. Then, starting with the Commonvoice 11.0 Arabic dataset, we created a an IPA representation of that dataset, _**pre-Silver Standard**_, and then processed it further by applying rules representing the phonological process of emphatic harmony -- the output of this is our **_Silver Standard_**. Finally, making use of machine learning techniques, we vectorized our phonological feature model as well as trained a neural network on our datasets to learn _**when**_ and **_where_** emphatic harmony should occur.
