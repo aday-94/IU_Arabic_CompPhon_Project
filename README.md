@@ -77,15 +77,15 @@ Colab Notebook
 
     Step 3. Read in pre-silver standard (preSS) and silver standard (SS) transcription texts 
 
-            Get all possible 2-character combinations in the preSS and SS 
+            Get counts of all possible 2-character combinations in the preSS and SS 
 
     Debrief 1
 
-    Step 4. Learn neural network (NN) feature embeddings for each IPA character 
+    Step 4. Learn and extract neural network (NN) feature embeddings for each IPA character 
 
-    Step 5. Visualize cosine similarity histograms of PF and NN embeddings 
+    Step 5. Visualize cosine similarity histograms of all IPA characters using PF and NN embeddings 
 
-    Step 6. Qualitatively compare the cosine similarity scores of each 2-character pair 
+    Step 6. Qualitatively compare the cosine similarity scores of each 2-character pair that showed an increase in counts from the preSS to SS texts
 
     Debrief 2
 
