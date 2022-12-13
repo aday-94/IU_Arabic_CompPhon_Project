@@ -29,7 +29,13 @@ Creating Dataset & Preprocessing Text
  
  <p align="center"><img width="800" height="400" src="https://github.com/lilykaw/IU_CompPhon_project/blob/main/README_images/L645-ArbOrtho.png"></p>
 
-- Step 1: 
+1. Download the [L645-Arabic-PreProcessing folder](https://github.com/lilykaw/IU_CompPhon_project/tree/main/L645-Arabic-PreProcessing)
+
+2. Remove all English/non-Arabic characters from the text -- Run [Remove English](https://github.com/lilykaw/IU_CompPhon_project/blob/main/L645-Arabic-PreProcessing/L645-ArbOrtho-RemoveEng.py)
+
+3. Next, remove odd characters such as ligatures, random symbols, etc -- Run [Remove Odds](https://github.com/lilykaw/IU_CompPhon_project/blob/main/L645-Arabic-PreProcessing/L645-ArbOrtho-RemoveOddChars.py)
+
+4. 
     Step 1 We removed all English characters from the data,  
 
     Step 2 We removed all “odd” characters – these were Arabic ligatures, random symbols such as the Soviet symbol, etc 
@@ -52,25 +58,25 @@ Creating Dataset & Preprocessing Text
 
 Colab Notebook 
 
-1. Import libraries 
+    Step 1. Import libraries 
 
-2. Create phonological feature (PF) embeddings for each IPA character 
+    Step 2. Create phonological feature (PF) embeddings for each IPA character 
 
-3. Read in pre-silver standard (preSS) and silver standard (SS) transcription texts 
+    Step 3. Read in pre-silver standard (preSS) and silver standard (SS) transcription texts 
 
-   Get counts of all possible 2-character combinations in the preSS and SS 
+            Get counts of all possible 2-character combinations in the preSS and SS 
 
-Debrief 1
+    Debrief 1
 
-4. Learn and extract neural network (NN) feature embeddings for each IPA character 
+    Step 4. Learn and extract neural network (NN) feature embeddings for each IPA character 
 
-5. Visualize cosine similarity histograms of all IPA characters using PF and NN embeddings 
+    Step 5. Visualize cosine similarity histograms of all IPA characters using PF and NN embeddings 
 
-6. Qualitatively compare the cosine similarity scores of each 2-character pair that showed an increase in counts from the preSS to SS texts
+    Step 6. Qualitatively compare the cosine similarity scores of each 2-character pair that showed an increase in counts from the preSS to SS texts
 
-Debrief 2
+    Debrief 2
 
-7. Get OCP cluster hierarchical graphs 
+    Step 7. Get OCP cluster hierarchical graphs 
 
 
 ## III. How to Install and Run the Project:
