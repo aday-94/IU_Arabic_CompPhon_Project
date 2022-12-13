@@ -8,15 +8,17 @@
 
 ### I. Project Description:
 
-Our application is to be able to take **_any_** Arabic text, transcribe the text (characters _**and**_ diacritics) to its matching IPA representation in an effective and efficient mannger, and use this newly, created dataset to study the phonotactics of Arabic with the aid of machine learning. More specifically, our application allows us to apply specific phonological processes that occur in Arabic producing our Silver Standard which is an IPA representation of how the original, written Arabic text _would_ be spoken with respect to the emphatic harmony process demonstrated in our experiment.
+Our application is to be able to take **_any_** Arabic text, transcribe the text (characters _**and**_ diacritics) to its matching IPA representation in an effective and efficient manner, and use this newly created dataset to study the phonotactics of Arabic with the aid of machine learning. [More specifically, our application allows us to apply specific phonological processes that occur in Arabic producing our Silver Standard which is an IPA representation of how the original, written Arabic text would be spoken with respect to the emphatic harmony process demonstrated in our experiment.]
 
-Emphatic harmony occurs in Modern-Standard Arabic when an emphatic consonant (ص, ض, ط, ظ) is present in a word. The presence of an emphatic causes emphasis spreading to surrounding the vowels and liquids (/l/, /r/) within the word boundary. In our phonological model, this process is characterized by the feature [+RTR]. The IPA realization of emphasis spreading demonstrated in our Silver Standard is that the vowels become uvularized (i.e. /a/ -> [aʶ]) and the liquids become pharyngealized (i.e. /r/ -> [rˤ]).
+More specifically, we apply specific phonological processes which occurs in Modern Standard Arabic (emphatic consonant and vowel harmony) to create a Silver Standard transcription, which is an IPA representation of how the original written Arabic text _would_ be represented when spoken.
+
+Emphatic harmony occurs in Modern-Standard Arabic when an emphatic consonant (ص, ض, ط, ظ) is present in a word. The presence of an emphatic causes emphasis spreading to the surrounding vowels and liquids (/l/, /r/) within the word boundary. In our phonological model, this process is characterized by the feature [+RTR]. The IPA realization of emphasis spreading demonstrated in our Silver Standard is that the vowels become uvularized (i.e. /a/ -> [aʶ]) and the liquids become pharyngealized (i.e. /r/ -> [rˤ]).
 
 Our phonological model is based on phonological features and feature geometry structures. Phonological features are unary and binary attributes of phonemes; think of them as the building blocks of phonemes. Feature Geometry is a form of phonology that allows us to take those features and model the hierachal structure of their organization within a language, dialect, or specific phoneme. The resulting structure becomes a visual representation of a language's sounds with respect to its phonological features.
 
-The building of this application consisted of several sections. First, utilizing phonological features and feature geometry, we created a hierarchal structure modeling phonological features with relation to IPA characters for the Arabic language. Then, starting with the Commonvoice 11.0 Arabic dataset, we created an IPA representation of that dataset, our _**(pre-Silver Standard ; referred to as pre-SS in rest of readme)**_, and then processed it further by applying rules representing the phonological process of emphatic harmony -- the output of this is our **_(Silver Standard ; referred to as SS in rest of readme)_**. Finally, making use of machine learning techniques, we vectorized our phonological feature model as well as trained a neural network on our datasets to learn _**when**_ and **_where_** emphatic harmony should occur.
+The building of this application consisted of several sections. First, utilizing phonological features and feature geometry, we created a hierarchal structure modeling phonological features with relation to IPA characters for the Arabic language. Then, starting with the Commonvoice 11.0 Arabic dataset, we created an IPA representation of that dataset, our _**(pre-Silver Standard ; hereon referred to as pre-SS)**_. We processed this dataset further by applying rules representing the phonological process of emphatic harmony -- the output of this is our **_(Silver Standard ; referred to as SS in rest of readme)_**. Finally, making use of machine learning techniques, we vectorized our phonological feature model as well as trained a neural network on our datasets to learn _**when**_ and **_where_** emphatic harmony should occur.
 
-In the analysis of our results, we examined the cosine similarity scores between each character bigram for, both, the phonological feature & neural network models. Then, we checked to see which character bigrams had an increase in frequency from the pre-SS to the SS. Our hypothesis was that the character bigrams that would increase the most would be associated with the process of emphasis spreading and the results confirmed our hypothesis. Finally, we took a subset of character bigrams from, both, the phonological feature and neural network embeddings in order to compare similarity scores between the two models.
+We next calculated the cosine similarity scores between each possible combination of two characters, using both the phonological feature embeddings *and* neural network embeddings. Then, we checked to see which character pairs had an increase in frequency from the pre-SS to the SS. Our hypothesis was that the character combinations that showed an increase in counts are associated with the process of emphasis spreading; the results confirmed our hypothesis. Finally, we took a subset of character pairs from both the phonological feature and neural network embeddings in order to compare similarity scores between the two models.
 
 Most of the challenges encountered in this project were during the pre-processing of the dataset. Arabic text is known for being difficult to pre-process and utilize for machine learning experiments. Our original plan was to use Epitran to convert the orthographic text to IPA, however, there were too many errors and inconsistencies we found when manually inspecting the output. The program took several hours each time we tried processing the Arabic text through it which was inefficient as well as the fact that it didn't convert any of the diacritics (there are a little over a dozen in Arabic orthography) and since the diacritics represent many of the vowels, this presented an issue for our phonotactic research. Due to this, we decided to create our own pre-processing application that consisted of six steps to go from the Arabic Commonvoice 11.0 orthographic text to its accurate, IPA representation, pre-SS, and then two steps that apply the phonological processes of emphatic vowel harmony and emphatic liquid harmony to the pre-Silver Standard creating SS. 
 
@@ -26,8 +28,6 @@ Immediate next steps for our research include two directions: a) Incorporate Ara
 Creating Dataset & Preprocessing Text
 
  I. Creating Dataset & Preprocessing Text 
- 
- <p align="center"><img width="800" height="400" src="https://github.com/lilykaw/IU_CompPhon_project/blob/main/README_images/L645-ArbOrtho.png"></p>
 
     Step 1 We removed all English characters from the data,  
 
@@ -51,25 +51,25 @@ Creating Dataset & Preprocessing Text
 
 Colab Notebook 
 
-    Step 1. Import libraries 
+- Step 1. Import libraries 
 
-    Step 2. Create phonological feature (PF) embeddings for each IPA character 
+- Step 2. Create phonological feature (PF) embeddings for each IPA character 
 
-    Step 3. Read in pre-silver standard (preSS) and silver standard (SS) transcription texts 
+- Step 3. Read in pre-silver standard (preSS) and silver standard (SS) transcription texts 
 
-            Get counts of all possible 2-character combinations in the preSS and SS 
+          Get counts of all possible 2-character combinations in the preSS and SS 
 
-    Debrief 1
+- Debrief 1
 
-    Step 4. Learn and extract neural network (NN) feature embeddings for each IPA character 
+- Step 4. Learn and extract neural network (NN) feature embeddings for each IPA character 
 
-    Step 5. Visualize cosine similarity histograms of all IPA characters using PF and NN embeddings 
+- Step 5. Visualize cosine similarity histograms of all IPA characters using PF and NN embeddings 
 
-    Step 6. Qualitatively compare the cosine similarity scores of each 2-character pair that showed an increase in counts from the preSS to SS texts
+- Step 6. Qualitatively compare the cosine similarity scores of each 2-character pair that showed an increase in counts from the preSS to SS texts
 
-    Debrief 2
+- Debrief 2
 
-    Step 7. Get OCP cluster hierarchical graphs 
+- Step 7. Get OCP cluster hierarchical graphs 
 
 
 ## III. How to Install and Run the Project:
