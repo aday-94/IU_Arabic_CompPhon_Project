@@ -27,7 +27,7 @@ Creating Dataset & Preprocessing Text
 
  I. Creating Dataset & Preprocessing Text 
  
- <p align="center"><img width="350" height="400" src="https://github.com/lilykaw/IU_CompPhon_project/blob/main/README_images/L645-ArbOrtho.png"></p>
+ <p align="center"><img width="500" height="400" src="https://github.com/lilykaw/IU_CompPhon_project/blob/main/README_images/L645-ArbOrtho.png"></p>
 
     Step 1 We removed all English characters from the data,  
 
