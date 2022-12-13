@@ -10,7 +10,9 @@
 
     1. What your application does,
 
-The purpose of our application is to be able to take **_any_** Arabic text, transcribe the text (characters _**and**_ diacritics) to its matching IPA representation, and use the dataset to study the phonotactics of Arabic with the aid of machine learning techniques. More specifically, our application allows us to apply the specific phonological processes that occur producing a _Silver Standard_ which is an IPA representation of how the original, written Arabic text _would_ be spoken.
+The purpose of our application is to be able to take **_any_** Arabic text, transcribe the text (characters _**and**_ diacritics) to its matching IPA representation, and use this newly, created dataset to study the phonotactics of Arabic with the aid of machine learning techniques. More specifically, our application allows us to apply the specific phonological processes (such as emphatic harmony which is demonstrated in our experiment) that occur in Arabic producing a _Silver Standard_ which is an IPA representation of how the original, written Arabic text _would_ be spoken.
+
+The building of this application consisted of several sections. First, utilizing phonological features and feature geometry, we created a hierarchal structure modeling phonological features with relation to IPA characters for the Arabic language. Then, starting with the Commonvoice 11.0 Arabic dataset, we created a an IPA representation of that dataset, _**pre-Silver Standard**_, and then processed it further by applying rules representing the phonological process of emphatic harmony -- the output of this is our **_Silver Standard_** ; 3) and finally.
 
 The purpose of our application is to be able to take _**any**_ Arabic text and, instantaneously, process the _**entire**_ text into its relevant IPA representation. Then, our application can apply specific phonological processes to the data, such as the emphatic harmony process we demonstrate, in order to create a Silver-Standard dataset to train machine learning models on.
  
